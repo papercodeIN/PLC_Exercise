@@ -1,0 +1,38 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=21: 4. Device a circuit in which
+// When I0.1 is pressed once– Q0.0 gets ON, Q0.1,Q0.2 get off,
+// When I0.1 is pressed twice – Q0.1 gets ON and Q0.0, Q0.2 get OFF
+// When I0.1 is pressed thrice – Q0.2 gets ON and Q0.0, Q0.1 get OFF
+// When I0.1 is pressed fourth time, all outputs should be OFF & Cycle should repeat on pressing I0.1 again
+// 
+BEGIN
+Network 1 
+LD     I0.0
+EU
+LD     M0.0
+CTU    C0, 4
+Network 2 
+LDW=   C0, 1
+=      Q0.0
+Network 3 
+LDW=   C0, 2
+=      Q0.1
+Network 4 
+LDW=   C0, 3
+=      Q0.2
+Network 5 
+LDW=   C0, 4
+=      M0.0
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

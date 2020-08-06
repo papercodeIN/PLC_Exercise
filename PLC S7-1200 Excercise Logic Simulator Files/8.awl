@@ -1,0 +1,35 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=Make a logic when I0.0 is pressed Q0.0 gets ON after 3 seconds delay & then after delay of 3
+// more seconds Q0.1 should be on & after delay of 3 seconds Q0.2 should be ON.
+BEGIN
+Network 1 
+LD     I0.0
+TON    T32, 3000
+Network 2 
+LD     T32
+=      Q0.0
+Network 3 
+LD     Q0.0
+TON    T96, 3000
+Network 4 
+LD     T96
+=      Q0.1
+Network 5 
+LD     Q0.1
+TON    T33, 300
+Network 6 
+LD     T33
+=      Q0.2
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

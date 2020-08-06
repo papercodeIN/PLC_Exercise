@@ -1,0 +1,56 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=16:When you press I0.0, Q0.0 and Q0.1 should blink with the delay of 1 sec continuously (such that 1 sec. ON & 1 sec. OFF) and when you press I0.1, Q0.0 and Q0.1 should blink with the delay of 1.5 sec 
+BEGIN
+Network 1 
+LD     I0.0
+O      M0.0
+=      M0.0
+Network 2 
+LD     M0.0
+EU
+LD     T96
+ED
+OLD
+AN     I0.2
+TOF    T32, 10000
+Network 3 
+LD     T32
+ED
+TOF    T96, 10000
+Network 4 
+LD     T32
+O      T33
+=      Q0.0
+Network 5 
+LD     T96
+O      T34
+=      Q0.1
+Network 6 
+LD     I0.1
+O      M0.1
+=      M0.1
+Network 7 
+LD     M0.1
+EU
+LD     T34
+ED
+OLD
+AN     I0.2
+TOF    T33, 1500
+Network 8 
+LD     T33
+ED
+TOF    T34, 1500
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

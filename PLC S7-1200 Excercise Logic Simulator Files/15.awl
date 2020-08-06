@@ -1,0 +1,31 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=14: Use I0.0 to blink Q0.0. (On Time 5 second & OFF time 5 second).
+BEGIN
+Network 1 
+LD     I0.0
+EU
+LD     T96
+ED
+OLD
+AN     I0.1
+TOF    T32, 5000
+Network 2 
+LD     T32
+ED
+TOF    T96, 1000
+Network 3 
+LD     T32
+=      Q0.1
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

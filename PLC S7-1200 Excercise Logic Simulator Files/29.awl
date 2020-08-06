@@ -1,0 +1,52 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=29) Make a circuit to blink the output Q0.0 using following delay time sequence using MOV command
+// 
+// •Default Delay Time = ON time 10 Second & OFF Time 10 second
+// 
+// 
+// •Case A, When I0.1 is pressed = ON time 20 seconds & OFF time 10 second
+// 
+// 
+// •Case B, When I0.2 is pressed = ON time 15 seconds & OFF Time 20 second
+// 
+BEGIN
+Network 1 
+LD     I0.0
+EU
+LD     T96
+ED
+OLD
+TOF    T32, MW0
+Network 2 
+LD     T32
+ED
+TOF    T96, MW2
+Network 3 
+LD     T32
+=      Q0.0
+Network 4 
+LD     I0.0
+EU
+MOVW   10000, MW0
+MOVW   10000, MW2
+Network 5 
+LD     I0.2
+MOVW   15000, MW0
+MOVW   20000, MW2
+Network 6 
+LD     I0.1
+MOVW   20000, MW0
+MOVW   10000, MW2
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

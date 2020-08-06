@@ -1,0 +1,31 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=Make a logic such that when I0.0 is pressed, Q0.0 gets latched. When I0.1 is pressed, nothing
+// should happen, but when I0.1 is released Q0.0 should unlatched.
+// 
+// Use Rising/Falling Edge (P & N) & Memory Bits (M0.0)
+BEGIN
+Network 1 
+// Use of Rising Edge
+LD     I0.0
+EU
+O      Q0.0
+AN     M0.0
+=      Q0.0
+Network 2 
+// Use of Falling Edge
+LD     I0.1
+ED
+=      M0.0
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

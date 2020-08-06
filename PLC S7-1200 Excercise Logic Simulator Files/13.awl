@@ -1,0 +1,30 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=Use one push button (I0.1) turn ON Q0.0 in following sequence: Q0.0 on for 20sec. then off for 20sec. then on for 30sec. then off for 30sec then on for 40sec. then continuously off.
+BEGIN
+Network 1 
+LD     I0.0
+EU
+TOF    T37, 140
+Network 2 
+LDW>=  T32, 1
+AW<=   T32, 20
+LDW>=  T32, 40
+AW<=   T32, 70
+OLD
+LDW>=  T32, 100
+AW<=   T32, 140
+OLD
+=      Q0.1
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

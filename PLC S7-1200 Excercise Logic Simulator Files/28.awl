@@ -1,0 +1,38 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=27: Switch ON a Lamp (Q0.0) after 5 sec. Make a provision using “MOV” command to change the delay time to 10 second by pressing I0.1 & then back to 5 sec by pressing I0.2. You have 1 maintained button (I0.0) and 2 push buttons only. Maintained button to switch on/off the lamp. Other two push button for changing the time from 5 to 10 sec and vice-versa.
+// 
+// 28: Make a circuit to Change the time of above timer using Increment & (I0.3- PB) Decrement (I0.4-PB) commands.
+BEGIN
+Network 1 
+LD     I0.0
+TON    T32, MW0
+EU
+MOVW   10000, MW0
+Network 2 
+// Every Pulse Increment Time With One Second
+LD     I0.1
+EU
+MOVW   +10000, MW0
+INCW   MW0
+Network 3 
+// Every Pulse Decrement Time With One Second
+LD     I0.2
+EU
+MOVW   +10000, MW0
+DECW   MW0
+Network 4 
+LD     T32
+=      Q0.0
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK

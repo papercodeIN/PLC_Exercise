@@ -1,0 +1,23 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=19: Make a logic such that When I0.0 is pressed 3 times, Q0.0 should be ON & when I0.1 is pressed Q0.0 should be OFF (Use Counter reset command)
+BEGIN
+Network 1 
+LD     I0.0
+LD     I0.1
+CTU    C0, 3
+Network 2 
+LD     C0
+=      Q0.0
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=SUBROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=INTERRUPT ROUTINE COMMENTS
+BEGIN
+Network 1 // Network Title
+// Network Comment
+END_INTERRUPT_BLOCK
